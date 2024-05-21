@@ -60,20 +60,14 @@
     <section id="blog">
         <h2>Blog</h2>
         <div class="art-cont">
+        <?php
+            while ($art = $result->fetch_assoc()) {
+        ?>
             <article class="art-child">
-                <h3><a href="<?php echo $link1; ?>" target="_blank"><?php echo $judul1; ?></a></h3>
-                <p><?php echo $desk1; ?></p>
+                <h3><a href="<?php echo $art['link']; ?>" target="_blank"><?php echo $art['judul']; ?></a></h3>
+                <p><?php echo $art['deskripsi']; ?></p>
             </article>
-
-            <article class="art-child">
-                <h3><a href="<?php echo $link2; ?>" target="_blank"><?php echo $judul2; ?></a></h3>
-                <p><?php echo $desk2; ?></p>
-            </article>
-
-            <article class="art-child">
-                <h3><a href="<?php echo $link3; ?>" target="_blank"><?php echo $judul3; ?></a></h3>
-                <p><?php echo $desk3; ?></p>
-            </article>
+            <?php } ?>
         </div>
     </section>
 
